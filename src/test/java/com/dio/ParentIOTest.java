@@ -123,5 +123,8 @@ public class ParentIOTest {
         Collections.shuffle(lsRan);
         /*8. size 2*/
         Collections.swap(ls,1,2);
+        /*unmodified List,Set,Map,SortedSet,Collection,SortedMap.Synchronized List,Set,Map,SortedMap,SortedSet,Collection*/
+        Collections.unmodifiableList(ls);
+        Collections.synchronizedList(ls);
     }
 }
