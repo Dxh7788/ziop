@@ -65,4 +65,20 @@ public class CollectionsTest {
         Collections.unmodifiableList(ls);
         Collections.synchronizedList(ls);
     }
+    @Test
+    public void valueOfTest(){
+        Integer i0 = Integer.valueOf(7);
+        Integer i1 = Integer.valueOf(7);
+        Integer i2 = new Integer(7);
+        System.out.println(i0==i1);
+        System.out.println(i0==i2);
+
+        String s0 = String.valueOf("aaa");
+        String s1 = String.valueOf("aaa");
+        String s2 = new String("aaa");
+        String s3 = s1.intern();
+        System.out.println(s0==s1);
+        System.out.println(s0==s2);
+        System.out.println(s0==s3);
+    }
 }
