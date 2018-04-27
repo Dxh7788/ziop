@@ -7,6 +7,42 @@ package com.dio;
 
 /**
  * root io
+ * generation泛型
+ * ジェネリックプログラミング
  * */
-public class ParentIO {
+public class ParentIO<K,V> {
+    private K key;
+    private V value;
+
+    private ParentIO parentIO;
+    private ParentIO() {
+    }
+
+    public ParentIO getInstance(K key,V value){
+        if (parentIO==null){
+            parentIO = new ParentIO();
+            parentIO.setKey(key);
+            parentIO.setValue(value);
+        }else {
+            parentIO.setKey(key);
+            parentIO.setValue(value);
+        }
+        return parentIO;
+    }
+
+    public K getKey() {
+        return key;
+    }
+
+    public void setKey(K key) {
+        this.key = key;
+    }
+
+    public V getValue() {
+        return value;
+    }
+
+    public void setValue(V value) {
+        this.value = value;
+    }
 }

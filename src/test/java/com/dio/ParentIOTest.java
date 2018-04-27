@@ -3,7 +3,6 @@ package com.dio;
 import org.junit.Test;
 
 import java.io.*;
-import java.util.*;
 
 /**
  * @author xh.d
@@ -17,8 +16,7 @@ import java.util.*;
  * ObjectInputStream
  * PipedInputStream
  * SequenceInputStream
- * StringBufferInputStream
-
+ * StringBufferInputStream @Deprecated
  */
 public class ParentIOTest {
     private InputStream is = null;
@@ -54,5 +52,9 @@ public class ParentIOTest {
             System.out.println(ou);
         }
         is.close();
+
+        PipedInputStream pis = new PipedInputStream();
+        PipedOutputStream pos = new PipedOutputStream();
+        pis.connect(pos);
     }
 }
